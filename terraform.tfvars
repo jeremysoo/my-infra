@@ -15,3 +15,15 @@ private_key_path = "/c/Users/roari/oci_api_key.pem"
 
 # Compartment OCID (where your resources will be created)
 compartment_ocid = "ocid1.compartment.oc1..aaaaaaaawtz5rnohfxwdtcgwfy3yfhfdiuqk2l52qjjv3rjnzqvfdfiewilq"
+
+workload_x_cidr              = "10.1.0.0/16"
+workload_x_web_subnet        = "10.1.1.0/24"
+workload_x_interfacing_subnet= "10.1.2.0/24"
+
+workload_y_cidr              = "10.2.0.0/16"
+workload_y_web_subnet        = "10.2.1.0/24"
+workload_y_interfacing_subnet= "10.2.2.0/24"
+
+workload_z_cidr              = "10.3.0.0/16"
+workload_z_web_subnet        = "10.3.1.0/24"
+workload_z_interfacing_subnet= "10.3.2.0/24"

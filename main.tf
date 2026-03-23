@@ -96,3 +96,33 @@ resource "oci_core_drg_attachment" "workload_x" {
   vcn_id       = oci_core_vcn.workload_x.id
   display_name = "workload-x-attachment"
 }
+
+module "workload_x" {
+  source                  = "./modules/workload_x"
+  compartment_ocid        = var.compartment_ocid
+  drg_id                  = oci_core_drg.main.id
+  cidr_block              = var.workload_x_cidr
+  vcn_name                = "workload-x-vcn"
+  web_subnet_cidr         = var.workload_x_web_subnet
+  interfacing_subnet_cidr = var.workload_x_interfacing_subnet
+}
+
+module "workload_y" {
+  source                  = "./modules/workload_y"
+  compartment_ocid        = var.compartment_ocid
+  drg_id                  = oci_core_drg.main.id
+  cidr_block              = var.workload_y_cidr
+  vcn_name                = "workload-y-vcn"
+  web_subnet_cidr         = var.workload_y_web_subnet
+  interfacing_subnet_cidr = var.workload_y_interfacing_subnet
+}
+
+module "workload_z" {
+  source                  = "./modules/workload_z"
+  compartment_ocid        = var.compartment_ocid
+  drg_id                  = oci_core_drg.main.id
+  cidr_block              = var.workload_z_cidr
+  vcn_name                = "workload-z-vcn"
+  web_subnet_cidr         = var.workload_z_web_subnet
+  interfacing_subnet_cidr = var.workload_z_interfacing_subnet
+}
