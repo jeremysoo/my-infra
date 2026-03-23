@@ -27,3 +27,12 @@ resource "oci_core_drg_attachment" "this" {
   vcn_id       = oci_core_vcn.this.id
   display_name = "${var.vcn_name}-attachment"
 }
+
+terraform {
+  required_providers {
+    oci = {
+      source  = "registry.opentofu.org/oracle/oci"
+      version = "= 5.47.0"
+    }
+  }
+}
